@@ -24,16 +24,13 @@ public class PlayerPickUpRange : MonoBehaviour
     }
 
     private void processInput(){
-        if(itemInRange.Count > 0){
+        if(itemInRange.Count > 0 || isHolding){
             if (Input.GetKeyDown(KeyCode.E)){
                 if (!isHolding){
                     pickUp(itemInRange[0]);
+                } else if (isHolding){
+                    drop();
                 }
-            }
-        }
-        if (isHolding){
-            if (Input.GetKeyDown(KeyCode.F)){
-                drop();
             }
         }
     }
@@ -51,7 +48,6 @@ public class PlayerPickUpRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Item")){
-            Debug.Log(other.gameObject.tag);
             itemInRange.Add(other.gameObject);
         }
     }
