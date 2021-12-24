@@ -38,18 +38,15 @@ public class PlayerPickUpRange : MonoBehaviour
         }
     }
     private void drop(){
-        Transform spawnedItem = spawnPoint.transform.GetChild(0);
-        spawnedItem.parent = null;
-        Destroy(spawnedItem.gameObject);
-        Instantiate(spawnedItem.gameObject, spawnPoint.transform.position, Quaternion.identity);
+        heldItem.transform.parent = null;
+        isHolding = false;
+
     }
     private void pickUp(GameObject item){
-        itemInRange.Remove(item);
-        heldItem = item;
-        GameObject spawnedItem = Instantiate(item, spawnPoint.transform.position, Quaternion.identity) as GameObject;
-        spawnedItem.transform.parent = spawnPoint.transform;
+        item.transform.position = spawnPoint.transform.position;
+        item.transform.parent = spawnPoint.transform;
         isHolding = true;
-        Destroy(item);
+        heldItem = item;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
