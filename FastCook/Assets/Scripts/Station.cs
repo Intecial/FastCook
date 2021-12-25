@@ -20,7 +20,7 @@ public class Station : MonoBehaviour
             Debug.Log(time);
             time -= 1 * Time.deltaTime;
             if(time <= 0){
-                // Item is Cooked
+                cookedItem.GetComponent<Item>().isCooked();
                 Debug.Log("Done!!!");
                 stopTimer();
             }
