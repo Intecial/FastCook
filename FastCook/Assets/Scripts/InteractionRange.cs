@@ -6,9 +6,11 @@ public class InteractionRange : MonoBehaviour
 {
 
     private bool stationInRange;
-
+    private PlayerPickUpRange playerPickUpRangeScript;
     private GameObject interactedObject;
-    // Start is called before the first frame update
+    private void Awake() {
+        playerPickUpRangeScript = GetComponent<PlayerPickUpRange>();
+    }
     void Start()
     {
         stationInRange = false;
@@ -19,8 +21,7 @@ public class InteractionRange : MonoBehaviour
     {
         if(stationInRange){
             if(Input.GetKeyDown(KeyCode.F)){
-                // Call Interact in Station Script;
-                Debug.Log("Interacted!!!");
+                interactedObject.GetComponent<Station>().interact(playerPickUpRangeScript.heldItem);
             }
         }
     }

@@ -8,7 +8,7 @@ public class PlayerPickUpRange : MonoBehaviour
     private bool isHolding;
     public GameObject spawnPoint;
 
-    private GameObject heldItem;
+    [SerializeField] public GameObject heldItem;
     
     // Start is called before the first frame update
     void Start()
