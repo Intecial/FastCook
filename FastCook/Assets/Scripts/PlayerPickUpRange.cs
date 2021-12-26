@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPickUpRange : MonoBehaviour
 {
     private List<GameObject> itemInRange;
-    private bool isHolding;
+    public bool isHolding;
     public GameObject spawnPoint;
 
     [SerializeField] public GameObject heldItem;

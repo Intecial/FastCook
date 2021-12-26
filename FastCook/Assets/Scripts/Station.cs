@@ -8,6 +8,7 @@ public class Station : MonoBehaviour
     private float time;
     private bool isTiming;
 
+    public bool isOccupied;
     private GameObject cookedItem;
     void Start()
     {
@@ -23,6 +24,7 @@ public class Station : MonoBehaviour
                 cookedItem.GetComponent<Item>().isCooked();
                 cookedItem.SetActive(true);
                 Debug.Log("Done!!!");
+                isOccupied = false;
                 stopTimer();
             }
         }
@@ -38,6 +40,7 @@ public class Station : MonoBehaviour
         if (!item.GetComponent<Item>().isRaw){
             return;
         }
+        isOccupied = true;
         item.SetActive(false);
         item.transform.position = this.transform.position;
         item.transform.parent = null;

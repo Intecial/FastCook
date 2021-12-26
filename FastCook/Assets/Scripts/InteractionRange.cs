@@ -21,14 +21,17 @@ public class InteractionRange : MonoBehaviour
     {
         if(stationInRange){
             if(Input.GetKeyDown(KeyCode.F)){
+                playerPickUpRangeScript.isHolding = false;
                 interactedObject.GetComponent<Station>().interact(playerPickUpRangeScript.heldItem);
             }
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Station")){
-            stationInRange = true;
-            interactedObject = other.gameObject;
+            if (other.gameObject.GetComponent<Station>().isOccupied == false){
+                stationInRange = true;
+                interactedObject = other.gameObject;
+            }
         }
     }
 
