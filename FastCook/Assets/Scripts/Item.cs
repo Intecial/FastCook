@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public bool isRaw = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class Item : MonoBehaviour
 
     public void isCooked(){
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        sr.color = Color.red;
+        sr.color = Color.blue;
+        isRaw = false;
     }
 }

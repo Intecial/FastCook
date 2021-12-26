@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1055092712}
+  heldItem: {fileID: 0}
 --- !u!61 &1425037235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1014,6 +1015,7 @@ GameObject:
   - component: {fileID: 1642391713}
   - component: {fileID: 1642391712}
   - component: {fileID: 1642391711}
+  - component: {fileID: 1642391714}
   m_Layer: 0
   m_Name: Station
   m_TagString: Station
@@ -1112,6 +1114,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642391714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642391710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de612f9a80d4b8842a7d634c5f5f541d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797801145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1236,7 @@ GameObject:
   - component: {fileID: 1916160824}
   - component: {fileID: 1916160823}
   - component: {fileID: 1916160822}
+  - component: {fileID: 1916160825}
   m_Layer: 0
   m_Name: ExObject
   m_TagString: Item
@@ -1310,3 +1325,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1916160825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916160821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f371e244adf674cbc14fd4446fad4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
