@@ -20,9 +20,9 @@ public class InteractionRange : MonoBehaviour
     void Update()
     {
         if(stationInRange){
-            if(Input.GetKeyDown(KeyCode.F)){
-                playerPickUpRangeScript.isHolding = false;
+            if(Input.GetKeyDown(KeyCode.F) && playerPickUpRangeScript.heldItem.GetComponent<Item>().isRaw){
                 interactedObject.GetComponent<Station>().interact(playerPickUpRangeScript.heldItem);
+                playerPickUpRangeScript.isHolding = false;
             }
         }
     }
